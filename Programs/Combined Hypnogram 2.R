@@ -74,10 +74,10 @@ BaselineDataEdit <- CombinedData_2 %>%
   mutate(Colours = factor(GenoInj,levels = c('WT MONO','WT PFF','Per1KO MONO','Per1KO PFF')),
          MouseNums = factor(Mouse, levels = c(MiceLevels$Mouse)),
          `Wake State` = factor(`Rodent Sleep`, levels = c('W','S','P','X'),labels = c('Wake','NREM','REM','Wake'))) %>%
-  filter(Genotype == "Per1KO")
+  filter(Genotype == "WT")
 
 ggplot(BaselineDataEdit,mapping = aes(colour = `Wake State`))+
-  geom_segment(aes(x=HMS, xend=HMS+0.00278, y="", yend="", fill = NULL), size=10) +
+  geom_segment(aes(x=HMS, xend=HMS+0.00111, y="", yend="", fill = NULL), size=10) +
   scale_color_manual(values = c('gold','royalblue','firebrick2'))+
   geom_vline(xintercept = c(14,15),size = 1)+
   scale_x_continuous(breaks = seq(12,17,1))+
